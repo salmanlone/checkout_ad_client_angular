@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm install && ng serve",
     "build": "ng build",
     "test": "ng test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox",
     "lint": "ng lint",
