@@ -19,5 +19,5 @@ cache:
 install:
   - npm install
 
-script:
-  - npm run test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+# script:
+#   - npm run test --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
