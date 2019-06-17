@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { RouterModule } from '@angular/router';
-import appRoutes from './routerConfig';
+import { appRoutes } from './routerConfig';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -20,7 +22,7 @@ import { LoginComponent } from './components/login/login.component';
     LoginComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRoutes)
+    BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
