@@ -5,7 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
     {
         path: 'dashboard',
         component: DashboardComponent
@@ -19,4 +19,4 @@ const appRoutes: Routes = [
         component: LoginComponent
     }
 ];
-export default appRoutes;
+// export default appRoutes;
