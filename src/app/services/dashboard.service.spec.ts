@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdApiService } from './dashboard.service';
+import { DashboardService } from './dashboard.service';
 
-describe('AdApiService', () => {
+describe('DashboardService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AdApiService = TestBed.get(AdApiService);
+    const service: DashboardService = TestBed.get(DashboardService);
     expect(service).toBeTruthy();
   });
 });

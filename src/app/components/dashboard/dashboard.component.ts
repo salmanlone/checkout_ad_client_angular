@@ -1,50 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { AdApiService } from './../../services/dashboard.service';
-import { Ad } from 'src/app/models/ad';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
 
-  private ads = [];
-  private cartAds = [];
-  private classicImage = '';
-  private standoutImage = '';
-  private premiumImage = '';
+  ads = [];
+  count:number;
 
-  constructor(private adApiService: AdApiService) {
-    this.classicImage = './../../../assets/images/classic.jpg';
-    this.standoutImage = './../../../assets/images/standout.jpg';
-    this.premiumImage = './../../../assets/images/premium.jpg';
+  constructor(private dashboardService: DashboardService) { 
+    this.dashboardService.currentCartCount.subscribe(cartCount => this.count = cartCount)
   }
 
   ngOnInit() {
-    this.adApiService.getAds().subscribe((res) => {
-      console.log(res);
-      this.FillResponse(res)
-      this.ads = res;
+    this.GetAds();
+  }
+
+  GetAds(){
+    this.dashboardService.getAds().subscribe((res) => {
+      this.ads =this.dashboardService.FillResponse(res)
     });
   }
 
-  FillResponse(res: Ad[]) {
-    for (let ad of res) {
-      switch (ad.name) {
-        case "classic":
-          ad.img = this.classicImage;
-          break;
-        case "standout":
-          ad.img = this.standoutImage;
-          break;
-        case "premium":
-          ad.img = this.premiumImage;
-          break;
-
-        default:
-          break;
-      }
-    }
+  AddToCart(id: string){
+    this.dashboardService.AddToCart(id);
   }
 }
