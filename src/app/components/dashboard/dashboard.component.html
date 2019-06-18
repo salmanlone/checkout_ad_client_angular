@@ -5,13 +5,12 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" *ngFor="let item of ads">
       <div class="card">
-        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" alt="Card image cap">
+        <img class="card-img-top" src="{{item.img}}" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title"><a>Card title</a></h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+          <h4 class="card-title"><a>{{item.name}}</a></h4>
+          <p class="card-text">{{item.currency}} {{item.price}}</p>
           <a href="#" class="btn btn-primary">Add to cart</a>
         </div>
       </div>

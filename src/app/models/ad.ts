@@ -3,4 +3,5 @@ export class Ad {
     name: string;
     price: string;
     currency: string;
+    img:string;
 }
