@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AdApiService } from './ad-api.service';
+import { AdApiService } from './dashboard.service';
 
 describe('AdApiService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
